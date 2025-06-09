@@ -25,8 +25,8 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 | Vivado          | 2024.2      |
 | ModelSim        | 20.1        |
 | SystemVerilog   | IEEE 1800   |
-| Python          | 3.11.7      |
-| PYNQ Framework  | 2.7+        |
+| Python          | 3.10.4      |
+| PYNQ            | 3.0.1       |
 
 ---
 
@@ -34,6 +34,10 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 
 ```plaintext
 ├── ip_repo/               # Packaged IPs (e.g. mac_filter)
+├── pynq/                  # PYNQ overlay and UDP Echo Python script
+│   ├── bitstream.bit
+│   ├── handoff.hwh
+│   └── udp_echo.py
 ├── src/                   # RTL
 │   └── mac_filter.sv
 │   └── mac_top.sv
@@ -42,10 +46,6 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 ├── vivado/                # Vivado project folder
 │   └── vivado.xpr
 ├── work/                  # ModelSim work folder
-├── pynq/                  # Python overlays and Jupyter notebooks
-│   ├── mac_udp.bit
-│   ├── mac_udp.hwh
-│   └── udp_echo.ipynb
 └── README.md              # You are here!
 ```
 
@@ -63,7 +63,7 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 ## 🧵 Author
 
 **Georges Sfeir**  
-[GitHub](https://github.com/georgessfeir)
+[GitHub](https://github.com/sfeirgeo)
 
 ---
 
