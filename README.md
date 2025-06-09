@@ -33,15 +33,17 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 ## 📁 Repository Structure
 
 ```plaintext
-├── src/                   # SystemVerilog source files (RTL)
+├── ip_repo/               # Packaged IPs (e.g. mac_filter)
+├── src/                   # RTL
 │   └── mac_filter.sv
+│   └── mac_top.sv
 ├── tb/                    # Testbenches for simulation
 │   └── mac_filter_tb.sv
-├── vivado/                # Vivado project folder (block design, constraints, etc.)
-│   └── mac_udp_design.xpr
-├── ip_repo/               # Packaged IPs (e.g., mac_filter IP)
+├── vivado/                # Vivado project folder
+│   └── vivado.xpr
+├── work/                  # ModelSim work folder
 ├── pynq/                  # Python overlays and Jupyter notebooks
 │   ├── mac_udp.bit
 │   ├── mac_udp.hwh
 │   └── udp_echo.ipynb
-└── README.md              # This file
+└── README.md              # You are here!
