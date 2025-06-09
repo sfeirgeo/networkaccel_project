@@ -47,3 +47,24 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 │   ├── mac_udp.hwh
 │   └── udp_echo.ipynb
 └── README.md              # You are here!
+```
+
+---
+
+## 📈 Key Features
+
+- MAC filtering based on hardcoded 48-bit address (default: `DE:AD:BE:EF:12:34`)
+- AXI4-Stream interface for compatibility with DMA and other streaming IPs
+- Compatible with PYNQ overlays for easy control from Python
+- Bitstream and HWH file export for real-time testing
+
+---
+
+## 🧵 Author
+
+**Georges Sfeir**  
+[GitHub](https://github.com/georgessfeir)
+
+---
+
+© 2025 Georges Sfeir — All rights reserved.
