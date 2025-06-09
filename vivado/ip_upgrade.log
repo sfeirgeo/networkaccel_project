@@ -1,6 +1,57 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Jun  9 13:07:05 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of mac_udp_design_mac_filter_0_1 (xilinx.com:user:mac_filter:1.0) from (Rev. 4) to (Rev. 6)
+
+2. Addressing Information
+-------------------------
+
+Detected addressing differences while upgrading 'mac_udp_design_mac_filter_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed address block 'S00_AXI/S00_AXI_reg'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun  5 17:29:51 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_1 (xilinx.com:user:mac_filter:1.0 (Rev. 4)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 | Date         : Thu Jun  5 17:19:47 2025
 | Host         : geo running 64-bit major release  (build 9200)
 | Command      : upgrade_ip
