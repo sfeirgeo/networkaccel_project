@@ -7,8 +7,7 @@
       "name": "mac_udp_design",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.2",
-      "validated": "true"
+      "tool_version": "2024.2"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -1918,11 +1917,14 @@
           "c_include_s2mm": {
             "value": "1"
           },
+          "c_include_s2mm_dre": {
+            "value": "0"
+          },
           "c_include_sg": {
             "value": "0"
           },
-          "c_s_axis_s2mm_tdata_width": {
-            "value": "8"
+          "c_s2mm_burst_size": {
+            "value": "16"
           }
         },
         "interface_ports": {
@@ -2010,7 +2012,7 @@
       },
       "mac_filter_0": {
         "vlnv": "xilinx.com:user:mac_filter:1.0",
-        "ip_revision": "7",
+        "ip_revision": "8",
         "xci_name": "mac_udp_design_mac_filter_0_1",
         "xci_path": "ip\\mac_udp_design_mac_filter_0_1\\mac_udp_design_mac_filter_0_1.xci",
         "inst_hier_path": "mac_filter_0"
