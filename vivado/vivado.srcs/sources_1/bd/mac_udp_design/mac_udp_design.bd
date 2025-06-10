@@ -1913,7 +1913,7 @@
         "inst_hier_path": "axi_dma_0",
         "parameters": {
           "c_include_mm2s": {
-            "value": "1"
+            "value": "0"
           },
           "c_include_s2mm": {
             "value": "1"
@@ -1921,24 +1921,11 @@
           "c_include_sg": {
             "value": "0"
           },
-          "c_m_axis_mm2s_tdata_width": {
-            "value": "8"
-          },
           "c_s_axis_s2mm_tdata_width": {
             "value": "8"
           }
         },
         "interface_ports": {
-          "M_AXI_MM2S": {
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "mode": "Master",
-            "address_space_ref": "Data_MM2S",
-            "base_address": {
-              "minimum": "0x00000000",
-              "maximum": "0xFFFFFFFF",
-              "width": "32"
-            }
-          },
           "M_AXI_S2MM": {
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "mode": "Master",
@@ -1952,10 +1939,6 @@
         },
         "addressing": {
           "address_spaces": {
-            "Data_MM2S": {
-              "range": "4G",
-              "width": "32"
-            },
             "Data_S2MM": {
               "range": "4G",
               "width": "32"
@@ -2027,19 +2010,13 @@
       },
       "mac_filter_0": {
         "vlnv": "xilinx.com:user:mac_filter:1.0",
-        "ip_revision": "6",
+        "ip_revision": "7",
         "xci_name": "mac_udp_design_mac_filter_0_1",
         "xci_path": "ip\\mac_udp_design_mac_filter_0_1\\mac_udp_design_mac_filter_0_1.xci",
         "inst_hier_path": "mac_filter_0"
       }
     },
     "interface_nets": {
-      "axi_dma_0_M_AXIS_MM2S": {
-        "interface_ports": [
-          "mac_filter_0/input_stream",
-          "axi_dma_0/M_AXIS_MM2S"
-        ]
-      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
@@ -2079,7 +2056,6 @@
           "axi_smc/aclk",
           "axi_dma_0/s_axi_lite_aclk",
           "rst_ps7_0_100M/slowest_sync_clk",
-          "axi_dma_0/m_axi_mm2s_aclk",
           "axi_dma_0/m_axi_s2mm_aclk",
           "mac_filter_0/clk"
         ]

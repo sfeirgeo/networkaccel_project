@@ -3,18 +3,6 @@
 	"modules": {
 		"mac_udp_design": {
 			"proto_instances": {
-				"/axi_dma_0/M_AXIS_MM2S": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "m_axi_mm2s_aclk"},
-						"ARESETN": { "actual": "mm2s_prmry_reset_out_n"},
-						"TDATA": { "actual": "m_axis_mm2s_tdata[7:0]"},
-						"TKEEP": { "actual": "m_axis_mm2s_tkeep[0:0]"},
-						"TLAST": { "actual": "m_axis_mm2s_tlast"},
-						"TREADY": { "actual": "m_axis_mm2s_tready"},
-						"TVALID": { "actual": "m_axis_mm2s_tvalid"}
-					}
-				},
 				"/axi_dma_0/S_AXIS_S2MM": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
@@ -117,16 +105,6 @@
 						"WREADY": { "actual": "S00_AXI_wready"},
 						"WSTRB": { "actual": "S00_AXI_wstrb[3:0]"},
 						"WVALID": { "actual": "S00_AXI_wvalid"}
-					}
-				},
-				"/mac_filter_0/input_stream": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "clk"},
-						"TDATA": { "actual": "s_axis_tdata[7:0]"},
-						"TLAST": { "actual": "s_axis_tlast"},
-						"TREADY": { "actual": "s_axis_tready"},
-						"TVALID": { "actual": "s_axis_tvalid"}
 					}
 				},
 				"/mac_filter_0/output_stream": {

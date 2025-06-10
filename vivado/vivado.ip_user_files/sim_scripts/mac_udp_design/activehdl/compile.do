@@ -181,8 +181,8 @@ vcom -work xil_defaultlib -93  \
 "../../../bd/mac_udp_design/ip/mac_udp_design_rst_ps7_0_100M_0/sim/mac_udp_design_rst_ps7_0_100M_0.vhd" \
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/86fe/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/0127/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_19 -l processing_system7_vip_v1_0_21 -l xil_defaultlib -l lib_pkg_v1_0_4 -l fifo_generator_v13_2_11 -l lib_fifo_v1_0_20 -l lib_srl_fifo_v1_0_4 -l lib_cdc_v1_0_3 -l axi_datamover_v5_1_35 -l axi_sg_v4_1_19 -l axi_dma_v7_1_34 -l xlconstant_v1_1_9 -l proc_sys_reset_v5_0_16 -l smartconnect_v1_0 -l axi_register_slice_v2_1_33 \
-"../../../bd/mac_udp_design/ipshared/bc39/39fb/mac_filter.sv" \
-"../../../bd/mac_udp_design/ipshared/bc39/39fb/mac_top.sv" \
+"../../../bd/mac_udp_design/ipshared/7968/39fb/mac_filter.sv" \
+"../../../bd/mac_udp_design/ipshared/7968/39fb/mac_top.sv" \
 "../../../bd/mac_udp_design/ip/mac_udp_design_mac_filter_0_1/sim/mac_udp_design_mac_filter_0_1.sv" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/86fe/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/0127/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_19 -l processing_system7_vip_v1_0_21 -l xil_defaultlib -l lib_pkg_v1_0_4 -l fifo_generator_v13_2_11 -l lib_fifo_v1_0_20 -l lib_srl_fifo_v1_0_4 -l lib_cdc_v1_0_3 -l axi_datamover_v5_1_35 -l axi_sg_v4_1_19 -l axi_dma_v7_1_34 -l xlconstant_v1_1_9 -l proc_sys_reset_v5_0_16 -l smartconnect_v1_0 -l axi_register_slice_v2_1_33 \

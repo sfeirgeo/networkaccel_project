@@ -20,8 +20,8 @@ verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.2/data/xilinx_vip/includ
 "../../../bd/mac_udp_design/ip/mac_udp_design_axi_smc_0/sim/mac_udp_design_axi_smc_0.v" \
 
 sv xil_defaultlib --include "C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/ec67/hdl" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/86fe/hdl" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/f0b6/hdl/verilog" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/0127/hdl/verilog" \
-"../../../bd/mac_udp_design/ipshared/bc39/39fb/mac_filter.sv" \
-"../../../bd/mac_udp_design/ipshared/bc39/39fb/mac_top.sv" \
+"../../../bd/mac_udp_design/ipshared/7968/39fb/mac_filter.sv" \
+"../../../bd/mac_udp_design/ipshared/7968/39fb/mac_top.sv" \
 "../../../bd/mac_udp_design/ip/mac_udp_design_mac_filter_0_1/sim/mac_udp_design_mac_filter_0_1.sv" \
 
 verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/ec67/hdl" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/86fe/hdl" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/f0b6/hdl/verilog" --include "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/0127/hdl/verilog" \

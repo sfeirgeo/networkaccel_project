@@ -57,7 +57,6 @@ if {$::dispatch::connected} {
 
 OPTRACE "mac_udp_design_mac_filter_0_1_synth_1" START { ROLLUP_AUTO }
 set_param bd.open.in_stealth_mode 1
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1

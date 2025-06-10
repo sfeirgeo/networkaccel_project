@@ -56,7 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "mac_udp_design_axi_dma_0_1_synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {HDL-1065} -limit 10000
+set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -78,7 +78,7 @@ set_property ip_output_repo c:/Users/gsfei/OneDrive/Desktop/networkaccel_project
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.srcs/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_1/mac_udp_design_axi_dma_0_1.xci
+read_ip -quiet C:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.srcs/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_1/mac_udp_design_axi_dma_0_1.xci
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_1/mac_udp_design_axi_dma_0_1.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_1/mac_udp_design_axi_dma_0_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_1/mac_udp_design_axi_dma_0_1_ooc.xdc]
