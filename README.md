@@ -35,8 +35,8 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 ```plaintext
 ├── ip_repo/               # Packaged IPs (e.g. mac_filter)
 ├── pynq/                  # PYNQ overlay and UDP Echo Python script
-│   ├── bitstream.bit
-│   ├── handoff.hwh
+│   ├── mac_udp_design.bit
+│   ├── mac_udp_design.hwh
 │   └── udp_echo.py
 ├── src/                   # RTL
 │   └── mac_filter.sv
@@ -54,9 +54,8 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 ## 📈 Key Features
 
 - MAC filtering based on hardcoded 48-bit address (default: `DE:AD:BE:EF:12:34`)
-- AXI4-Stream interface for compatibility with DMA and other streaming IPs
-- Compatible with PYNQ overlays for easy control from Python
-- Bitstream and HWH file export for real-time testing
+- AXI4 for compatibility with DMA and other streaming IPs
+- Compatible with PYNQ overlays for control from Python
 
 ---
 
