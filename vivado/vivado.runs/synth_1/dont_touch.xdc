@@ -4,19 +4,31 @@
 # Block Designs: bd/mac_udp_design/mac_udp_design.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design || ORIG_REF_NAME==mac_udp_design} -quiet] -quiet
 
-# IP: bd/mac_udp_design/ip/mac_udp_design_processing_system7_0_0/mac_udp_design_processing_system7_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_processing_system7_0_0 || ORIG_REF_NAME==mac_udp_design_processing_system7_0_0} -quiet] -quiet
-
-# IP: bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_1/mac_udp_design_axi_dma_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_axi_dma_0_1 || ORIG_REF_NAME==mac_udp_design_axi_dma_0_1} -quiet] -quiet
-
-# IP: bd/mac_udp_design/ip/mac_udp_design_axi_smc_0/mac_udp_design_axi_smc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_axi_smc_0 || ORIG_REF_NAME==mac_udp_design_axi_smc_0} -quiet] -quiet
-
-# IP: bd/mac_udp_design/ip/mac_udp_design_rst_ps7_0_100M_0/mac_udp_design_rst_ps7_0_100M_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_rst_ps7_0_100M_0 || ORIG_REF_NAME==mac_udp_design_rst_ps7_0_100M_0} -quiet] -quiet
-
 # IP: bd/mac_udp_design/ip/mac_udp_design_mac_filter_0_1/mac_udp_design_mac_filter_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_mac_filter_0_1 || ORIG_REF_NAME==mac_udp_design_mac_filter_0_1} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_2/mac_udp_design_axi_dma_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_axi_dma_0_2 || ORIG_REF_NAME==mac_udp_design_axi_dma_0_2} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_1/mac_udp_design_fifo_generator_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_fifo_generator_0_1 || ORIG_REF_NAME==mac_udp_design_fifo_generator_0_1} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_2/mac_udp_design_fifo_generator_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_fifo_generator_0_2 || ORIG_REF_NAME==mac_udp_design_fifo_generator_0_2} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_processing_system7_0_3/mac_udp_design_processing_system7_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_processing_system7_0_3 || ORIG_REF_NAME==mac_udp_design_processing_system7_0_3} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_axi_interconnect_0_1/mac_udp_design_axi_interconnect_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_axi_interconnect_0_1 || ORIG_REF_NAME==mac_udp_design_axi_interconnect_0_1} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_proc_sys_reset_0_0/mac_udp_design_proc_sys_reset_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_proc_sys_reset_0_0 || ORIG_REF_NAME==mac_udp_design_proc_sys_reset_0_0} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_xlconstant_0_0/mac_udp_design_xlconstant_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_xlconstant_0_0 || ORIG_REF_NAME==mac_udp_design_xlconstant_0_0} -quiet] -quiet
+
+# IP: bd/mac_udp_design/ip/mac_udp_design_axi_interconnect_0_imp_auto_pc_0/mac_udp_design_axi_interconnect_0_imp_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mac_udp_design_axi_interconnect_0_imp_auto_pc_0 || ORIG_REF_NAME==mac_udp_design_axi_interconnect_0_imp_auto_pc_0} -quiet] -quiet
 
 # XDC: c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/mac_udp_design_ooc.xdc

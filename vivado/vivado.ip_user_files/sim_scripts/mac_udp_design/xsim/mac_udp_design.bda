@@ -199,7 +199,7 @@
                 "MI": "M_AXI_GP0",
                 "MS": "SEG_axi_dma_0_Reg",
                 "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/axi_dma_0",
+                "SX": "/axi_dma_8bit_stream",
                 "SI": "S_AXI_LITE",
                 "SS": "Reg",
                 "SV": "xilinx.com:ip:axi_dma:7.1",

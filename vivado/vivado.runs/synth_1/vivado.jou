@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Jun  9 13:08:49 2025
-# Process ID         : 11408
+# Start of session at: Thu Jun 12 17:16:33 2025
+# Process ID         : 13336
 # Current directory  : C:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.runs/synth_1
 # Command line       : vivado.exe -log mac_udp_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mac_udp_design_wrapper.tcl
 # Log file           : C:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.runs/synth_1/mac_udp_design_wrapper.vds
@@ -19,6 +19,6 @@
 # Host memory        : 33620 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 35768 MB
-# Available Virtual  : 17102 MB
+# Available Virtual  : 10714 MB
 #-----------------------------------------------------------
 source mac_udp_design_wrapper.tcl -notrace

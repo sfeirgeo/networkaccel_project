@@ -10,7 +10,7 @@ print("loading dma...")
 dma = overlay.axi_dma_0
 
 print("setting variables...")
-board_mac = "de:ad:be:ef:12:34"
+board_mac = "DE:AD:BE:EF:12:34"
 board_ip  = "192.168.5.25"
 
 host_mac = "DC:4B:A1:2E:80:9C"
@@ -27,12 +27,17 @@ original_pkt = Ether(dst=board_mac, src=host_mac) / \
 
 raw_bytes = bytes(original_pkt)
 packet_len = len(raw_bytes)
+num_words = (packet_len + 3) // 4
+
 
 # buffers
 print("initializing buffers...")
-in_buf = allocate(shape=(packet_len,), dtype='u1')
-out_buf = allocate(shape=(packet_len,), dtype='u1')
-in_buf[:] = list(raw_bytes)
+in_buf = allocate(shape=(num_words,), dtype='uint32')
+out_buf = allocate(shape=(num_words,), dtype='uint32')
+for i in range(num_words):
+    word_bytes = raw_bytes[i*4:i*4+4]
+    in_buf[i] = int.from_bytes(word_bytes.ljust(4, b'\x00'), byteorder='little')
+    
 in_buf.flush()
 
 # DMA to mac filter

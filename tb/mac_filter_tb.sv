@@ -11,16 +11,16 @@ module mac_filter_tb;
 
     // DUT signals
     logic in_tvalid, in_tready, in_tlast;
-    logic[31:0] in_tdata;
+    logic[7:0] in_tdata;
 
     logic out_tvalid, out_tlast;
-    logic[31:0] out_tdata;
+    logic[7:0] out_tdata;
     logic out_tready = 1;
 
     mac_filter DUT (.*);
 
     // packet driver task
-    task send_packet(input bit [31:0] pkt[6], input int length);
+    task send_packet(input bit [7:0] pkt[], input int length);
         begin
             for (int i = 0; i < length; i++) begin
                 @(posedge clk);
@@ -68,12 +68,12 @@ module mac_filter_tb;
         #10;
 
         $display("Sending good packet (should pass)...");
-        send_packet(good_pkt, 20);
+        send_packet(good_pkt, 19);
         // should display good_pkt by byte in transcript
         #100;
 
         $display("Sending bad packet (should be dropped)...");
-        send_packet(bad_pkt, 20);
+        send_packet(bad_pkt, 19);
         // should not display in transcript
         #100;
 
