@@ -63,7 +63,3 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 
 **Georges Sfeir**  
 [GitHub](https://github.com/sfeirgeo)
-
----
-
-© 2025 Georges Sfeir — All rights reserved.
