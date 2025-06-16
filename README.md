@@ -34,18 +34,18 @@ This project leverages both **hardware acceleration (FPGA)** and **software cont
 
 ```plaintext
 ├── ip_repo/               # Packaged IPs (e.g. mac_filter)
-├── pynq/                  # PYNQ overlay and UDP Echo Python script
+├── pynq/                  # PYNQ overlay
 │   ├── mac_udp_design.bit
-│   ├── mac_udp_design.hwh
-│   └── udp_echo.py
-├── src/                   # RTL
+│   └── mac_udp_design.hwh
+├── rtl/                   # RTL
 │   └── mac_filter.sv
-│   └── mac_top.sv
+├── scripts/               # Python
+│   └── udp_echo.py
 ├── tb/                    # Testbenches for simulation
 │   └── mac_filter_tb.sv
 ├── vivado/                # Vivado project folder
 │   └── vivado.xpr
-├── work/                  # ModelSim work folder
+├── work/                  # ModelSim work. folder
 └── README.md              # You are here!
 ```
 
