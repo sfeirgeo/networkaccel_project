@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Thu Jun 12 15:39:26 2025
+-- Date        : Mon Jun 16 13:53:39 2025
 -- Host        : geo running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_processing_system7_0_3/mac_udp_design_processing_system7_0_3_sim_netlist.vhdl
@@ -398,7 +398,7 @@ entity mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_
     S_AXI_HP0_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
     S_AXI_HP0_BID : out STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP0_RID : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_HP0_RDATA : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    S_AXI_HP0_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
     S_AXI_HP0_RCOUNT : out STD_LOGIC_VECTOR ( 7 downto 0 );
     S_AXI_HP0_WCOUNT : out STD_LOGIC_VECTOR ( 7 downto 0 );
     S_AXI_HP0_RACOUNT : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -431,8 +431,8 @@ entity mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_
     S_AXI_HP0_ARID : in STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP0_AWID : in STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP0_WID : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_HP0_WDATA : in STD_LOGIC_VECTOR ( 63 downto 0 );
-    S_AXI_HP0_WSTRB : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    S_AXI_HP0_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_HP0_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_HP1_ARESETN : out STD_LOGIC;
     S_AXI_HP1_ARREADY : out STD_LOGIC;
     S_AXI_HP1_AWREADY : out STD_LOGIC;
@@ -490,7 +490,7 @@ entity mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_
     S_AXI_HP2_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
     S_AXI_HP2_BID : out STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP2_RID : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_HP2_RDATA : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    S_AXI_HP2_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
     S_AXI_HP2_RCOUNT : out STD_LOGIC_VECTOR ( 7 downto 0 );
     S_AXI_HP2_WCOUNT : out STD_LOGIC_VECTOR ( 7 downto 0 );
     S_AXI_HP2_RACOUNT : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -523,8 +523,8 @@ entity mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_
     S_AXI_HP2_ARID : in STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP2_AWID : in STD_LOGIC_VECTOR ( 5 downto 0 );
     S_AXI_HP2_WID : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_HP2_WDATA : in STD_LOGIC_VECTOR ( 63 downto 0 );
-    S_AXI_HP2_WSTRB : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    S_AXI_HP2_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_HP2_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
     S_AXI_HP3_ARESETN : out STD_LOGIC;
     S_AXI_HP3_ARREADY : out STD_LOGIC;
     S_AXI_HP3_AWREADY : out STD_LOGIC;
@@ -768,7 +768,7 @@ entity mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_
   attribute C_S_AXI_GP1_ID_WIDTH : integer;
   attribute C_S_AXI_GP1_ID_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 6;
   attribute C_S_AXI_HP0_DATA_WIDTH : integer;
-  attribute C_S_AXI_HP0_DATA_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 64;
+  attribute C_S_AXI_HP0_DATA_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 32;
   attribute C_S_AXI_HP0_ID_WIDTH : integer;
   attribute C_S_AXI_HP0_ID_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 6;
   attribute C_S_AXI_HP1_DATA_WIDTH : integer;
@@ -776,7 +776,7 @@ entity mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_
   attribute C_S_AXI_HP1_ID_WIDTH : integer;
   attribute C_S_AXI_HP1_ID_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 6;
   attribute C_S_AXI_HP2_DATA_WIDTH : integer;
-  attribute C_S_AXI_HP2_DATA_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 64;
+  attribute C_S_AXI_HP2_DATA_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 32;
   attribute C_S_AXI_HP2_ID_WIDTH : integer;
   attribute C_S_AXI_HP2_ID_WIDTH of mac_udp_design_processing_system7_0_3_processing_system7_v5_5_processing_system7 : entity is 6;
   attribute C_S_AXI_HP3_DATA_WIDTH : integer;
@@ -910,41 +910,9 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3_processing_syste
   signal PS7_i_n_1062 : STD_LOGIC;
   signal PS7_i_n_1063 : STD_LOGIC;
   signal PS7_i_n_1064 : STD_LOGIC;
-  signal PS7_i_n_1065 : STD_LOGIC;
-  signal PS7_i_n_1066 : STD_LOGIC;
-  signal PS7_i_n_1067 : STD_LOGIC;
-  signal PS7_i_n_1068 : STD_LOGIC;
-  signal PS7_i_n_1069 : STD_LOGIC;
   signal PS7_i_n_107 : STD_LOGIC;
-  signal PS7_i_n_1070 : STD_LOGIC;
-  signal PS7_i_n_1071 : STD_LOGIC;
-  signal PS7_i_n_1072 : STD_LOGIC;
-  signal PS7_i_n_1073 : STD_LOGIC;
-  signal PS7_i_n_1074 : STD_LOGIC;
-  signal PS7_i_n_1075 : STD_LOGIC;
-  signal PS7_i_n_1076 : STD_LOGIC;
-  signal PS7_i_n_1077 : STD_LOGIC;
-  signal PS7_i_n_1078 : STD_LOGIC;
-  signal PS7_i_n_1079 : STD_LOGIC;
   signal PS7_i_n_108 : STD_LOGIC;
-  signal PS7_i_n_1080 : STD_LOGIC;
-  signal PS7_i_n_1081 : STD_LOGIC;
-  signal PS7_i_n_1082 : STD_LOGIC;
-  signal PS7_i_n_1083 : STD_LOGIC;
-  signal PS7_i_n_1084 : STD_LOGIC;
-  signal PS7_i_n_1085 : STD_LOGIC;
-  signal PS7_i_n_1086 : STD_LOGIC;
-  signal PS7_i_n_1087 : STD_LOGIC;
-  signal PS7_i_n_1088 : STD_LOGIC;
-  signal PS7_i_n_1089 : STD_LOGIC;
   signal PS7_i_n_109 : STD_LOGIC;
-  signal PS7_i_n_1090 : STD_LOGIC;
-  signal PS7_i_n_1091 : STD_LOGIC;
-  signal PS7_i_n_1092 : STD_LOGIC;
-  signal PS7_i_n_1093 : STD_LOGIC;
-  signal PS7_i_n_1094 : STD_LOGIC;
-  signal PS7_i_n_1095 : STD_LOGIC;
-  signal PS7_i_n_1096 : STD_LOGIC;
   signal PS7_i_n_1097 : STD_LOGIC;
   signal PS7_i_n_1098 : STD_LOGIC;
   signal PS7_i_n_1099 : STD_LOGIC;
@@ -1052,42 +1020,10 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3_processing_syste
   signal PS7_i_n_1190 : STD_LOGIC;
   signal PS7_i_n_1191 : STD_LOGIC;
   signal PS7_i_n_1192 : STD_LOGIC;
-  signal PS7_i_n_1193 : STD_LOGIC;
-  signal PS7_i_n_1194 : STD_LOGIC;
-  signal PS7_i_n_1195 : STD_LOGIC;
-  signal PS7_i_n_1196 : STD_LOGIC;
-  signal PS7_i_n_1197 : STD_LOGIC;
-  signal PS7_i_n_1198 : STD_LOGIC;
-  signal PS7_i_n_1199 : STD_LOGIC;
   signal PS7_i_n_12 : STD_LOGIC;
   signal PS7_i_n_120 : STD_LOGIC;
-  signal PS7_i_n_1200 : STD_LOGIC;
-  signal PS7_i_n_1201 : STD_LOGIC;
-  signal PS7_i_n_1202 : STD_LOGIC;
-  signal PS7_i_n_1203 : STD_LOGIC;
-  signal PS7_i_n_1204 : STD_LOGIC;
-  signal PS7_i_n_1205 : STD_LOGIC;
-  signal PS7_i_n_1206 : STD_LOGIC;
-  signal PS7_i_n_1207 : STD_LOGIC;
-  signal PS7_i_n_1208 : STD_LOGIC;
-  signal PS7_i_n_1209 : STD_LOGIC;
   signal PS7_i_n_121 : STD_LOGIC;
-  signal PS7_i_n_1210 : STD_LOGIC;
-  signal PS7_i_n_1211 : STD_LOGIC;
-  signal PS7_i_n_1212 : STD_LOGIC;
-  signal PS7_i_n_1213 : STD_LOGIC;
-  signal PS7_i_n_1214 : STD_LOGIC;
-  signal PS7_i_n_1215 : STD_LOGIC;
-  signal PS7_i_n_1216 : STD_LOGIC;
-  signal PS7_i_n_1217 : STD_LOGIC;
-  signal PS7_i_n_1218 : STD_LOGIC;
-  signal PS7_i_n_1219 : STD_LOGIC;
   signal PS7_i_n_122 : STD_LOGIC;
-  signal PS7_i_n_1220 : STD_LOGIC;
-  signal PS7_i_n_1221 : STD_LOGIC;
-  signal PS7_i_n_1222 : STD_LOGIC;
-  signal PS7_i_n_1223 : STD_LOGIC;
-  signal PS7_i_n_1224 : STD_LOGIC;
   signal PS7_i_n_1225 : STD_LOGIC;
   signal PS7_i_n_1226 : STD_LOGIC;
   signal PS7_i_n_1227 : STD_LOGIC;
@@ -1984,6 +1920,8 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3_processing_syste
   signal NLW_PS7_i_MAXIGP0AWCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 1 to 1 );
   signal NLW_PS7_i_MAXIGP1ARCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 1 to 1 );
   signal NLW_PS7_i_MAXIGP1AWCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal NLW_PS7_i_SAXIHP0RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 32 );
+  signal NLW_PS7_i_SAXIHP2RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 32 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of DDR_CAS_n_BIBUF : label is "PRIMITIVE";
   attribute BOX_TYPE of DDR_CKE_BIBUF : label is "PRIMITIVE";
@@ -2867,38 +2805,6 @@ begin
   S_AXI_HP0_RCOUNT(2) <= \<const0>\;
   S_AXI_HP0_RCOUNT(1) <= \<const0>\;
   S_AXI_HP0_RCOUNT(0) <= \<const0>\;
-  S_AXI_HP0_RDATA(63) <= \<const0>\;
-  S_AXI_HP0_RDATA(62) <= \<const0>\;
-  S_AXI_HP0_RDATA(61) <= \<const0>\;
-  S_AXI_HP0_RDATA(60) <= \<const0>\;
-  S_AXI_HP0_RDATA(59) <= \<const0>\;
-  S_AXI_HP0_RDATA(58) <= \<const0>\;
-  S_AXI_HP0_RDATA(57) <= \<const0>\;
-  S_AXI_HP0_RDATA(56) <= \<const0>\;
-  S_AXI_HP0_RDATA(55) <= \<const0>\;
-  S_AXI_HP0_RDATA(54) <= \<const0>\;
-  S_AXI_HP0_RDATA(53) <= \<const0>\;
-  S_AXI_HP0_RDATA(52) <= \<const0>\;
-  S_AXI_HP0_RDATA(51) <= \<const0>\;
-  S_AXI_HP0_RDATA(50) <= \<const0>\;
-  S_AXI_HP0_RDATA(49) <= \<const0>\;
-  S_AXI_HP0_RDATA(48) <= \<const0>\;
-  S_AXI_HP0_RDATA(47) <= \<const0>\;
-  S_AXI_HP0_RDATA(46) <= \<const0>\;
-  S_AXI_HP0_RDATA(45) <= \<const0>\;
-  S_AXI_HP0_RDATA(44) <= \<const0>\;
-  S_AXI_HP0_RDATA(43) <= \<const0>\;
-  S_AXI_HP0_RDATA(42) <= \<const0>\;
-  S_AXI_HP0_RDATA(41) <= \<const0>\;
-  S_AXI_HP0_RDATA(40) <= \<const0>\;
-  S_AXI_HP0_RDATA(39) <= \<const0>\;
-  S_AXI_HP0_RDATA(38) <= \<const0>\;
-  S_AXI_HP0_RDATA(37) <= \<const0>\;
-  S_AXI_HP0_RDATA(36) <= \<const0>\;
-  S_AXI_HP0_RDATA(35) <= \<const0>\;
-  S_AXI_HP0_RDATA(34) <= \<const0>\;
-  S_AXI_HP0_RDATA(33) <= \<const0>\;
-  S_AXI_HP0_RDATA(32) <= \<const0>\;
   S_AXI_HP0_RDATA(31) <= \<const0>\;
   S_AXI_HP0_RDATA(30) <= \<const0>\;
   S_AXI_HP0_RDATA(29) <= \<const0>\;
@@ -3091,38 +2997,6 @@ begin
   S_AXI_HP2_RCOUNT(2) <= \<const0>\;
   S_AXI_HP2_RCOUNT(1) <= \<const0>\;
   S_AXI_HP2_RCOUNT(0) <= \<const0>\;
-  S_AXI_HP2_RDATA(63) <= \<const0>\;
-  S_AXI_HP2_RDATA(62) <= \<const0>\;
-  S_AXI_HP2_RDATA(61) <= \<const0>\;
-  S_AXI_HP2_RDATA(60) <= \<const0>\;
-  S_AXI_HP2_RDATA(59) <= \<const0>\;
-  S_AXI_HP2_RDATA(58) <= \<const0>\;
-  S_AXI_HP2_RDATA(57) <= \<const0>\;
-  S_AXI_HP2_RDATA(56) <= \<const0>\;
-  S_AXI_HP2_RDATA(55) <= \<const0>\;
-  S_AXI_HP2_RDATA(54) <= \<const0>\;
-  S_AXI_HP2_RDATA(53) <= \<const0>\;
-  S_AXI_HP2_RDATA(52) <= \<const0>\;
-  S_AXI_HP2_RDATA(51) <= \<const0>\;
-  S_AXI_HP2_RDATA(50) <= \<const0>\;
-  S_AXI_HP2_RDATA(49) <= \<const0>\;
-  S_AXI_HP2_RDATA(48) <= \<const0>\;
-  S_AXI_HP2_RDATA(47) <= \<const0>\;
-  S_AXI_HP2_RDATA(46) <= \<const0>\;
-  S_AXI_HP2_RDATA(45) <= \<const0>\;
-  S_AXI_HP2_RDATA(44) <= \<const0>\;
-  S_AXI_HP2_RDATA(43) <= \<const0>\;
-  S_AXI_HP2_RDATA(42) <= \<const0>\;
-  S_AXI_HP2_RDATA(41) <= \<const0>\;
-  S_AXI_HP2_RDATA(40) <= \<const0>\;
-  S_AXI_HP2_RDATA(39) <= \<const0>\;
-  S_AXI_HP2_RDATA(38) <= \<const0>\;
-  S_AXI_HP2_RDATA(37) <= \<const0>\;
-  S_AXI_HP2_RDATA(36) <= \<const0>\;
-  S_AXI_HP2_RDATA(35) <= \<const0>\;
-  S_AXI_HP2_RDATA(34) <= \<const0>\;
-  S_AXI_HP2_RDATA(33) <= \<const0>\;
-  S_AXI_HP2_RDATA(32) <= \<const0>\;
   S_AXI_HP2_RDATA(31) <= \<const0>\;
   S_AXI_HP2_RDATA(30) <= \<const0>\;
   S_AXI_HP2_RDATA(29) <= \<const0>\;
@@ -4328,38 +4202,7 @@ PS7_i: unisim.vcomponents.PS7
       SAXIHP0RCOUNT(2) => PS7_i_n_1342,
       SAXIHP0RCOUNT(1) => PS7_i_n_1343,
       SAXIHP0RCOUNT(0) => PS7_i_n_1344,
-      SAXIHP0RDATA(63) => PS7_i_n_1065,
-      SAXIHP0RDATA(62) => PS7_i_n_1066,
-      SAXIHP0RDATA(61) => PS7_i_n_1067,
-      SAXIHP0RDATA(60) => PS7_i_n_1068,
-      SAXIHP0RDATA(59) => PS7_i_n_1069,
-      SAXIHP0RDATA(58) => PS7_i_n_1070,
-      SAXIHP0RDATA(57) => PS7_i_n_1071,
-      SAXIHP0RDATA(56) => PS7_i_n_1072,
-      SAXIHP0RDATA(55) => PS7_i_n_1073,
-      SAXIHP0RDATA(54) => PS7_i_n_1074,
-      SAXIHP0RDATA(53) => PS7_i_n_1075,
-      SAXIHP0RDATA(52) => PS7_i_n_1076,
-      SAXIHP0RDATA(51) => PS7_i_n_1077,
-      SAXIHP0RDATA(50) => PS7_i_n_1078,
-      SAXIHP0RDATA(49) => PS7_i_n_1079,
-      SAXIHP0RDATA(48) => PS7_i_n_1080,
-      SAXIHP0RDATA(47) => PS7_i_n_1081,
-      SAXIHP0RDATA(46) => PS7_i_n_1082,
-      SAXIHP0RDATA(45) => PS7_i_n_1083,
-      SAXIHP0RDATA(44) => PS7_i_n_1084,
-      SAXIHP0RDATA(43) => PS7_i_n_1085,
-      SAXIHP0RDATA(42) => PS7_i_n_1086,
-      SAXIHP0RDATA(41) => PS7_i_n_1087,
-      SAXIHP0RDATA(40) => PS7_i_n_1088,
-      SAXIHP0RDATA(39) => PS7_i_n_1089,
-      SAXIHP0RDATA(38) => PS7_i_n_1090,
-      SAXIHP0RDATA(37) => PS7_i_n_1091,
-      SAXIHP0RDATA(36) => PS7_i_n_1092,
-      SAXIHP0RDATA(35) => PS7_i_n_1093,
-      SAXIHP0RDATA(34) => PS7_i_n_1094,
-      SAXIHP0RDATA(33) => PS7_i_n_1095,
-      SAXIHP0RDATA(32) => PS7_i_n_1096,
+      SAXIHP0RDATA(63 downto 32) => NLW_PS7_i_SAXIHP0RDATA_UNCONNECTED(63 downto 32),
       SAXIHP0RDATA(31) => PS7_i_n_1097,
       SAXIHP0RDATA(30) => PS7_i_n_1098,
       SAXIHP0RDATA(29) => PS7_i_n_1099,
@@ -4612,38 +4455,7 @@ PS7_i: unisim.vcomponents.PS7
       SAXIHP2RCOUNT(2) => PS7_i_n_1374,
       SAXIHP2RCOUNT(1) => PS7_i_n_1375,
       SAXIHP2RCOUNT(0) => PS7_i_n_1376,
-      SAXIHP2RDATA(63) => PS7_i_n_1193,
-      SAXIHP2RDATA(62) => PS7_i_n_1194,
-      SAXIHP2RDATA(61) => PS7_i_n_1195,
-      SAXIHP2RDATA(60) => PS7_i_n_1196,
-      SAXIHP2RDATA(59) => PS7_i_n_1197,
-      SAXIHP2RDATA(58) => PS7_i_n_1198,
-      SAXIHP2RDATA(57) => PS7_i_n_1199,
-      SAXIHP2RDATA(56) => PS7_i_n_1200,
-      SAXIHP2RDATA(55) => PS7_i_n_1201,
-      SAXIHP2RDATA(54) => PS7_i_n_1202,
-      SAXIHP2RDATA(53) => PS7_i_n_1203,
-      SAXIHP2RDATA(52) => PS7_i_n_1204,
-      SAXIHP2RDATA(51) => PS7_i_n_1205,
-      SAXIHP2RDATA(50) => PS7_i_n_1206,
-      SAXIHP2RDATA(49) => PS7_i_n_1207,
-      SAXIHP2RDATA(48) => PS7_i_n_1208,
-      SAXIHP2RDATA(47) => PS7_i_n_1209,
-      SAXIHP2RDATA(46) => PS7_i_n_1210,
-      SAXIHP2RDATA(45) => PS7_i_n_1211,
-      SAXIHP2RDATA(44) => PS7_i_n_1212,
-      SAXIHP2RDATA(43) => PS7_i_n_1213,
-      SAXIHP2RDATA(42) => PS7_i_n_1214,
-      SAXIHP2RDATA(41) => PS7_i_n_1215,
-      SAXIHP2RDATA(40) => PS7_i_n_1216,
-      SAXIHP2RDATA(39) => PS7_i_n_1217,
-      SAXIHP2RDATA(38) => PS7_i_n_1218,
-      SAXIHP2RDATA(37) => PS7_i_n_1219,
-      SAXIHP2RDATA(36) => PS7_i_n_1220,
-      SAXIHP2RDATA(35) => PS7_i_n_1221,
-      SAXIHP2RDATA(34) => PS7_i_n_1222,
-      SAXIHP2RDATA(33) => PS7_i_n_1223,
-      SAXIHP2RDATA(32) => PS7_i_n_1224,
+      SAXIHP2RDATA(63 downto 32) => NLW_PS7_i_SAXIHP2RDATA_UNCONNECTED(63 downto 32),
       SAXIHP2RDATA(31) => PS7_i_n_1225,
       SAXIHP2RDATA(30) => PS7_i_n_1226,
       SAXIHP2RDATA(29) => PS7_i_n_1227,
@@ -5995,7 +5807,7 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3 is
   signal NLW_inst_S_AXI_HP0_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_S_AXI_HP0_RACOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_inst_S_AXI_HP0_RCOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal NLW_inst_S_AXI_HP0_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal NLW_inst_S_AXI_HP0_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_inst_S_AXI_HP0_RID_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_inst_S_AXI_HP0_RRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_S_AXI_HP0_WACOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
@@ -6013,7 +5825,7 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3 is
   signal NLW_inst_S_AXI_HP2_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_S_AXI_HP2_RACOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_inst_S_AXI_HP2_RCOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal NLW_inst_S_AXI_HP2_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal NLW_inst_S_AXI_HP2_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_inst_S_AXI_HP2_RID_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_inst_S_AXI_HP2_RRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_S_AXI_HP2_WACOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
@@ -6094,7 +5906,7 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3 is
   attribute C_S_AXI_GP1_ID_WIDTH : integer;
   attribute C_S_AXI_GP1_ID_WIDTH of inst : label is 6;
   attribute C_S_AXI_HP0_DATA_WIDTH : integer;
-  attribute C_S_AXI_HP0_DATA_WIDTH of inst : label is 64;
+  attribute C_S_AXI_HP0_DATA_WIDTH of inst : label is 32;
   attribute C_S_AXI_HP0_ID_WIDTH : integer;
   attribute C_S_AXI_HP0_ID_WIDTH of inst : label is 6;
   attribute C_S_AXI_HP1_DATA_WIDTH : integer;
@@ -6102,7 +5914,7 @@ architecture STRUCTURE of mac_udp_design_processing_system7_0_3 is
   attribute C_S_AXI_HP1_ID_WIDTH : integer;
   attribute C_S_AXI_HP1_ID_WIDTH of inst : label is 6;
   attribute C_S_AXI_HP2_DATA_WIDTH : integer;
-  attribute C_S_AXI_HP2_DATA_WIDTH of inst : label is 64;
+  attribute C_S_AXI_HP2_DATA_WIDTH of inst : label is 32;
   attribute C_S_AXI_HP2_ID_WIDTH : integer;
   attribute C_S_AXI_HP2_ID_WIDTH of inst : label is 6;
   attribute C_S_AXI_HP3_DATA_WIDTH : integer;
@@ -6744,7 +6556,7 @@ inst: entity work.mac_udp_design_processing_system7_0_3_processing_system7_v5_5_
       S_AXI_HP0_BVALID => NLW_inst_S_AXI_HP0_BVALID_UNCONNECTED,
       S_AXI_HP0_RACOUNT(2 downto 0) => NLW_inst_S_AXI_HP0_RACOUNT_UNCONNECTED(2 downto 0),
       S_AXI_HP0_RCOUNT(7 downto 0) => NLW_inst_S_AXI_HP0_RCOUNT_UNCONNECTED(7 downto 0),
-      S_AXI_HP0_RDATA(63 downto 0) => NLW_inst_S_AXI_HP0_RDATA_UNCONNECTED(63 downto 0),
+      S_AXI_HP0_RDATA(31 downto 0) => NLW_inst_S_AXI_HP0_RDATA_UNCONNECTED(31 downto 0),
       S_AXI_HP0_RDISSUECAP1_EN => '0',
       S_AXI_HP0_RID(5 downto 0) => NLW_inst_S_AXI_HP0_RID_UNCONNECTED(5 downto 0),
       S_AXI_HP0_RLAST => NLW_inst_S_AXI_HP0_RLAST_UNCONNECTED,
@@ -6753,12 +6565,12 @@ inst: entity work.mac_udp_design_processing_system7_0_3_processing_system7_v5_5_
       S_AXI_HP0_RVALID => NLW_inst_S_AXI_HP0_RVALID_UNCONNECTED,
       S_AXI_HP0_WACOUNT(5 downto 0) => NLW_inst_S_AXI_HP0_WACOUNT_UNCONNECTED(5 downto 0),
       S_AXI_HP0_WCOUNT(7 downto 0) => NLW_inst_S_AXI_HP0_WCOUNT_UNCONNECTED(7 downto 0),
-      S_AXI_HP0_WDATA(63 downto 0) => B"0000000000000000000000000000000000000000000000000000000000000000",
+      S_AXI_HP0_WDATA(31 downto 0) => B"00000000000000000000000000000000",
       S_AXI_HP0_WID(5 downto 0) => B"000000",
       S_AXI_HP0_WLAST => '0',
       S_AXI_HP0_WREADY => NLW_inst_S_AXI_HP0_WREADY_UNCONNECTED,
       S_AXI_HP0_WRISSUECAP1_EN => '0',
-      S_AXI_HP0_WSTRB(7 downto 0) => B"00000000",
+      S_AXI_HP0_WSTRB(3 downto 0) => B"0000",
       S_AXI_HP0_WVALID => '0',
       S_AXI_HP1_ACLK => '0',
       S_AXI_HP1_ARADDR(31 downto 0) => B"00000000000000000000000000000000",
@@ -6836,7 +6648,7 @@ inst: entity work.mac_udp_design_processing_system7_0_3_processing_system7_v5_5_
       S_AXI_HP2_BVALID => NLW_inst_S_AXI_HP2_BVALID_UNCONNECTED,
       S_AXI_HP2_RACOUNT(2 downto 0) => NLW_inst_S_AXI_HP2_RACOUNT_UNCONNECTED(2 downto 0),
       S_AXI_HP2_RCOUNT(7 downto 0) => NLW_inst_S_AXI_HP2_RCOUNT_UNCONNECTED(7 downto 0),
-      S_AXI_HP2_RDATA(63 downto 0) => NLW_inst_S_AXI_HP2_RDATA_UNCONNECTED(63 downto 0),
+      S_AXI_HP2_RDATA(31 downto 0) => NLW_inst_S_AXI_HP2_RDATA_UNCONNECTED(31 downto 0),
       S_AXI_HP2_RDISSUECAP1_EN => '0',
       S_AXI_HP2_RID(5 downto 0) => NLW_inst_S_AXI_HP2_RID_UNCONNECTED(5 downto 0),
       S_AXI_HP2_RLAST => NLW_inst_S_AXI_HP2_RLAST_UNCONNECTED,
@@ -6845,12 +6657,12 @@ inst: entity work.mac_udp_design_processing_system7_0_3_processing_system7_v5_5_
       S_AXI_HP2_RVALID => NLW_inst_S_AXI_HP2_RVALID_UNCONNECTED,
       S_AXI_HP2_WACOUNT(5 downto 0) => NLW_inst_S_AXI_HP2_WACOUNT_UNCONNECTED(5 downto 0),
       S_AXI_HP2_WCOUNT(7 downto 0) => NLW_inst_S_AXI_HP2_WCOUNT_UNCONNECTED(7 downto 0),
-      S_AXI_HP2_WDATA(63 downto 0) => B"0000000000000000000000000000000000000000000000000000000000000000",
+      S_AXI_HP2_WDATA(31 downto 0) => B"00000000000000000000000000000000",
       S_AXI_HP2_WID(5 downto 0) => B"000000",
       S_AXI_HP2_WLAST => '0',
       S_AXI_HP2_WREADY => NLW_inst_S_AXI_HP2_WREADY_UNCONNECTED,
       S_AXI_HP2_WRISSUECAP1_EN => '0',
-      S_AXI_HP2_WSTRB(7 downto 0) => B"00000000",
+      S_AXI_HP2_WSTRB(3 downto 0) => B"0000",
       S_AXI_HP2_WVALID => '0',
       S_AXI_HP3_ACLK => '0',
       S_AXI_HP3_ARADDR(31 downto 0) => B"00000000000000000000000000000000",

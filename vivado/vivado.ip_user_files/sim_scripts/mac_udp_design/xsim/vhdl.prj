@@ -1,6 +1,6 @@
 vhdl xil_defaultlib  \
-"../../../bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_2/sim/mac_udp_design_axi_dma_0_2.vhd" \
 "../../../bd/mac_udp_design/ip/mac_udp_design_proc_sys_reset_0_0/sim/mac_udp_design_proc_sys_reset_0_0.vhd" \
+"../../../bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_0/sim/mac_udp_design_axi_dma_0_0.vhd" \
 
 # Do not sort compile order
 nosort

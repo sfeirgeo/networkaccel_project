@@ -83,11 +83,11 @@ mac_udp_design_processing_system7_0_3_sc::mac_udp_design_processing_system7_0_3_
     model_param_props.addLong("C_S_AXI_GP1_ID_WIDTH", "6");
     model_param_props.addLong("C_S_AXI_ACP_ID_WIDTH", "3");
     model_param_props.addLong("C_S_AXI_HP0_ID_WIDTH", "6");
-    model_param_props.addLong("C_S_AXI_HP0_DATA_WIDTH", "64");
+    model_param_props.addLong("C_S_AXI_HP0_DATA_WIDTH", "32");
     model_param_props.addLong("C_S_AXI_HP1_ID_WIDTH", "6");
     model_param_props.addLong("C_S_AXI_HP1_DATA_WIDTH", "64");
     model_param_props.addLong("C_S_AXI_HP2_ID_WIDTH", "6");
-    model_param_props.addLong("C_S_AXI_HP2_DATA_WIDTH", "64");
+    model_param_props.addLong("C_S_AXI_HP2_DATA_WIDTH", "32");
     model_param_props.addLong("C_S_AXI_HP3_ID_WIDTH", "6");
     model_param_props.addLong("C_S_AXI_HP3_DATA_WIDTH", "64");
     model_param_props.addLong("C_M_AXI_GP0_THREAD_ID_WIDTH", "12");

@@ -11,7 +11,7 @@ module mac_filter_tb;
 
     // DUT signals
     logic s_axis_tvalid, s_axis_tready, s_axis_tlast;
-    logic[31:0] s_axis_tdata;
+    logic[31:0] s_axis_tdata = 0;
 
     logic m_axis_tvalid, m_axis_tlast;
     logic[31:0] m_axis_tdata;

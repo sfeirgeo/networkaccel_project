@@ -56,8 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 6
-set_param bd.open.in_stealth_mode 1
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -80,17 +78,17 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib C:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/hdl/mac_udp_design_wrapper.v
 add_files C:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.srcs/sources_1/bd/mac_udp_design/mac_udp_design.bd
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_2/mac_udp_design_axi_dma_0_2.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_2/mac_udp_design_axi_dma_0_2_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_2/mac_udp_design_axi_dma_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_1/mac_udp_design_fifo_generator_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_1/mac_udp_design_fifo_generator_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_2/mac_udp_design_fifo_generator_0_2.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_2/mac_udp_design_fifo_generator_0_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_processing_system7_0_3/mac_udp_design_processing_system7_0_3.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_proc_sys_reset_0_0/mac_udp_design_proc_sys_reset_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_proc_sys_reset_0_0/mac_udp_design_proc_sys_reset_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_proc_sys_reset_0_0/mac_udp_design_proc_sys_reset_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_0/mac_udp_design_axi_dma_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_0/mac_udp_design_axi_dma_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_0/mac_udp_design_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_3/mac_udp_design_fifo_generator_0_3.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_3/mac_udp_design_fifo_generator_0_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_4/mac_udp_design_fifo_generator_0_4.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_4/mac_udp_design_fifo_generator_0_4_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/ip/mac_udp_design_axi_interconnect_0_imp_auto_pc_0/mac_udp_design_axi_interconnect_0_imp_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gsfei/OneDrive/Desktop/networkaccel_project/vivado/vivado.gen/sources_1/bd/mac_udp_design/mac_udp_design_ooc.xdc]
 
