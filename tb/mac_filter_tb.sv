@@ -10,12 +10,12 @@ module mac_filter_tb;
     end
 
     // DUT signals
-    logic in_tvalid, in_tready, in_tlast;
-    logic[31:0] in_tdata;
+    logic s_axis_tvalid, s_axis_tready, s_axis_tlast;
+    logic[31:0] s_axis_tdata;
 
-    logic out_tvalid, out_tlast;
-    logic[31:0] out_tdata;
-    logic out_tready = 1;
+    logic m_axis_tvalid, m_axis_tlast;
+    logic[31:0] m_axis_tdata;
+    logic m_axis_tready = 1;
 
     mac_filter DUT (.*);
 
@@ -24,21 +24,21 @@ module mac_filter_tb;
         begin
             for (int i = 0; i < length; i++) begin
                 @(posedge clk);
-                in_tvalid <= 1;
-                in_tdata  <= pkt[i];
-                in_tlast  <= (i == length-2);
-                while (!in_tready) @(posedge clk);
+                s_axis_tvalid <= 1;
+                s_axis_tdata  <= pkt[i];
+                s_axis_tlast  <= (i == length-2);
+                while (!s_axis_tready) @(posedge clk);
             end
-            in_tvalid <= 0;
-            in_tlast  <= 0;
-            in_tdata  <= 0;
+            s_axis_tvalid <= 0;
+            s_axis_tlast  <= 0;
+            s_axis_tdata  <= 0;
         end
     endtask
 
     initial begin : monitor
         forever begin
             @(posedge clk);
-            if (out_tvalid) $display("[%0t ns] OUT: %02x %s", $time, out_tdata, out_tlast ? "<TLAST>" : "");
+            if (m_axis_tvalid) $display("[%0t ns] OUT: %02x %s", $time, m_axis_tdata, m_axis_tlast ? "<TLAST>" : "");
         end
     end
 
