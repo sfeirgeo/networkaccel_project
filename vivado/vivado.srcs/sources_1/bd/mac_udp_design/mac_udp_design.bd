@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../vivado.gen/sources_1/bd/mac_udp_design",
       "name": "mac_udp_design",
@@ -10,9 +10,6 @@
       "tool_version": "2024.2"
     },
     "design_tree": {
-      "mac_filter": "",
-      "DMA2filter_FIFO": "",
-      "filter2DMA_FIFO": "",
       "processing_system7_0": "",
       "axi_interconnect_0": {
         "s00_couplers": {
@@ -21,7 +18,8 @@
       },
       "proc_sys_reset_0": "",
       "xlconstant_0": "",
-      "axi_dma_8bit_stream": ""
+      "axi_cdma_0": "",
+      "mac_filter_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -194,55 +192,6 @@
       }
     },
     "components": {
-      "mac_filter": {
-        "vlnv": "xilinx.com:user:mac_filter:1.0",
-        "ip_revision": "9",
-        "xci_name": "mac_udp_design_mac_filter_0_1",
-        "xci_path": "ip\\mac_udp_design_mac_filter_0_1\\mac_udp_design_mac_filter_0_1.xci",
-        "inst_hier_path": "mac_filter"
-      },
-      "DMA2filter_FIFO": {
-        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
-        "ip_revision": "11",
-        "xci_name": "mac_udp_design_fifo_generator_0_1",
-        "xci_path": "ip\\mac_udp_design_fifo_generator_0_1\\mac_udp_design_fifo_generator_0_1.xci",
-        "inst_hier_path": "DMA2filter_FIFO",
-        "parameters": {
-          "Enable_TLAST": {
-            "value": "true"
-          },
-          "INTERFACE_TYPE": {
-            "value": "AXI_STREAM"
-          },
-          "TDATA_NUM_BYTES": {
-            "value": "1"
-          },
-          "TUSER_WIDTH": {
-            "value": "0"
-          }
-        }
-      },
-      "filter2DMA_FIFO": {
-        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
-        "ip_revision": "11",
-        "xci_name": "mac_udp_design_fifo_generator_0_2",
-        "xci_path": "ip\\mac_udp_design_fifo_generator_0_2\\mac_udp_design_fifo_generator_0_2.xci",
-        "inst_hier_path": "filter2DMA_FIFO",
-        "parameters": {
-          "Enable_TLAST": {
-            "value": "true"
-          },
-          "INTERFACE_TYPE": {
-            "value": "AXI_STREAM"
-          },
-          "TDATA_NUM_BYTES": {
-            "value": "1"
-          },
-          "TUSER_WIDTH": {
-            "value": "0"
-          }
-        }
-      },
       "processing_system7_0": {
         "vlnv": "xilinx.com:ip:processing_system7:5.5",
         "ip_revision": "6",
@@ -1334,7 +1283,7 @@
             "value": "200"
           },
           "PCW_PERIPHERAL_BOARD_PRESET": {
-            "value": "None"
+            "value": "part0"
           },
           "PCW_PLL_BYPASSMODE_ENABLE": {
             "value": "0"
@@ -2193,47 +2142,28 @@
           }
         }
       },
-      "axi_dma_8bit_stream": {
-        "vlnv": "xilinx.com:ip:axi_dma:7.1",
-        "ip_revision": "34",
-        "xci_name": "mac_udp_design_axi_dma_0_2",
-        "xci_path": "ip\\mac_udp_design_axi_dma_0_2\\mac_udp_design_axi_dma_0_2.xci",
-        "inst_hier_path": "axi_dma_8bit_stream",
+      "axi_cdma_0": {
+        "vlnv": "xilinx.com:ip:axi_cdma:4.1",
+        "ip_revision": "33",
+        "xci_name": "mac_udp_design_axi_cdma_0_0",
+        "xci_path": "ip\\mac_udp_design_axi_cdma_0_0\\mac_udp_design_axi_cdma_0_0.xci",
+        "inst_hier_path": "axi_cdma_0",
         "parameters": {
-          "c_include_mm2s": {
+          "C_INCLUDE_DRE": {
             "value": "1"
           },
-          "c_include_mm2s_dre": {
-            "value": "1"
-          },
-          "c_include_s2mm_dre": {
-            "value": "1"
-          },
-          "c_include_sg": {
+          "C_INCLUDE_SF": {
             "value": "0"
           },
-          "c_m_axis_mm2s_tdata_width": {
-            "value": "8"
-          },
-          "c_s_axis_s2mm_tdata_width": {
-            "value": "8"
+          "C_INCLUDE_SG": {
+            "value": "0"
           }
         },
         "interface_ports": {
-          "M_AXI_MM2S": {
+          "M_AXI": {
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "mode": "Master",
-            "address_space_ref": "Data_MM2S",
-            "base_address": {
-              "minimum": "0x00000000",
-              "maximum": "0xFFFFFFFF",
-              "width": "32"
-            }
-          },
-          "M_AXI_S2MM": {
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "mode": "Master",
-            "address_space_ref": "Data_S2MM",
+            "address_space_ref": "Data",
             "base_address": {
               "minimum": "0x00000000",
               "maximum": "0xFFFFFFFF",
@@ -2243,47 +2173,26 @@
         },
         "addressing": {
           "address_spaces": {
-            "Data_MM2S": {
-              "range": "4G",
-              "width": "32"
-            },
-            "Data_S2MM": {
+            "Data": {
               "range": "4G",
               "width": "32"
             }
           }
         }
+      },
+      "mac_filter_0": {
+        "vlnv": "xilinx.com:user:mac_filter:1.0",
+        "ip_revision": "12",
+        "xci_name": "mac_udp_design_mac_filter_0_2",
+        "xci_path": "ip\\mac_udp_design_mac_filter_0_2\\mac_udp_design_mac_filter_0_2.xci",
+        "inst_hier_path": "mac_filter_0"
       }
     },
     "interface_nets": {
-      "axi_dma_0_M_AXIS_MM2S": {
-        "interface_ports": [
-          "axi_dma_8bit_stream/M_AXIS_MM2S",
-          "DMA2filter_FIFO/S_AXIS"
-        ]
-      },
       "axi_interconnect_0_M00_AXI": {
         "interface_ports": [
           "axi_interconnect_0/M00_AXI",
-          "axi_dma_8bit_stream/S_AXI_LITE"
-        ]
-      },
-      "fifo_generator_0_M_AXIS": {
-        "interface_ports": [
-          "DMA2filter_FIFO/M_AXIS",
-          "mac_filter/input_stream"
-        ]
-      },
-      "fifo_generator_1_M_AXIS": {
-        "interface_ports": [
-          "filter2DMA_FIFO/M_AXIS",
-          "axi_dma_8bit_stream/S_AXIS_S2MM"
-        ]
-      },
-      "mac_filter_0_output_stream": {
-        "interface_ports": [
-          "mac_filter/output_stream",
-          "filter2DMA_FIFO/S_AXIS"
+          "axi_cdma_0/S_AXI_LITE"
         ]
       },
       "processing_system7_0_DDR": {
@@ -2317,32 +2226,24 @@
       "proc_sys_reset_0_peripheral_aresetn": {
         "ports": [
           "proc_sys_reset_0/peripheral_aresetn",
-          "filter2DMA_FIFO/s_aresetn",
-          "DMA2filter_FIFO/s_aresetn",
-          "axi_dma_8bit_stream/axi_resetn"
+          "axi_cdma_0/s_axi_lite_aresetn"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
-          "DMA2filter_FIFO/s_aclk",
-          "filter2DMA_FIFO/s_aclk",
           "axi_interconnect_0/ACLK",
           "axi_interconnect_0/S00_ACLK",
           "axi_interconnect_0/M00_ACLK",
           "processing_system7_0/M_AXI_GP0_ACLK",
           "proc_sys_reset_0/slowest_sync_clk",
-          "mac_filter/clk",
-          "axi_dma_8bit_stream/s_axi_lite_aclk",
-          "axi_dma_8bit_stream/m_axi_s2mm_aclk",
-          "axi_dma_8bit_stream/m_axi_mm2s_aclk"
+          "axi_cdma_0/s_axi_lite_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
-          "proc_sys_reset_0/ext_reset_in",
-          "mac_filter/rst_n"
+          "proc_sys_reset_0/ext_reset_in"
         ]
       },
       "xlconstant_0_dout": {
@@ -2358,9 +2259,9 @@
         "address_spaces": {
           "Data": {
             "segments": {
-              "SEG_axi_dma_0_Reg": {
-                "address_block": "/axi_dma_8bit_stream/S_AXI_LITE/Reg",
-                "offset": "0x40400000",
+              "SEG_axi_cdma_0_Reg": {
+                "address_block": "/axi_cdma_0/S_AXI_LITE/Reg",
+                "offset": "0x7E200000",
                 "range": "64K"
               }
             }

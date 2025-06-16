@@ -11,16 +11,16 @@ module mac_filter_tb;
 
     // DUT signals
     logic in_tvalid, in_tready, in_tlast;
-    logic[7:0] in_tdata;
+    logic[31:0] in_tdata;
 
     logic out_tvalid, out_tlast;
-    logic[7:0] out_tdata;
+    logic[31:0] out_tdata;
     logic out_tready = 1;
 
     mac_filter DUT (.*);
 
     // packet driver task
-    task send_packet(input bit [7:0] pkt[], input int length);
+    task send_packet(input bit [31:0] pkt[], input int length);
         begin
             for (int i = 0; i < length; i++) begin
                 @(posedge clk);
@@ -43,23 +43,25 @@ module mac_filter_tb;
     end
 
     initial begin : stimulus
-        bit [7:0] good_pkt [0:18];
-        bit [7:0] bad_pkt  [0:18];
+        bit [31:0] good_pkt [0:4];
+        bit [31:0] bad_pkt  [0:4];
 
         // matching dest MAC: DEADBEEF1234
         good_pkt = '{
-            8'hDE, 8'hAD, 8'hBE, 8'hEF, 8'h12, 8'h34, // dest MAC (match)
-            8'h00, 8'h0A, 8'h35, 8'h12, 8'h34, 8'h56, // src MAC
-            8'h08, 8'h00,                             // EtherType
-            "H", "e", "l", "l", "o"
+            32'hDEADBEEF, // dest MAC (upper 48 bits)
+            32'h1234000A, // src MAC (lower 48 bits)
+            32'h35123456,
+            32'h0800F0F0, // EtherType
+            "hola"
         };
 
         // non-matching dest MAC: 010203040506
         bad_pkt = '{
-            8'h01, 8'h02, 8'h03, 8'h04, 8'h05, 8'h06, // dest MAC (no match)
-            8'h00, 8'h0A, 8'h35, 8'h12, 8'h34, 8'h56,
-            8'h08, 8'h00,
-            "W", "o", "r", "l", "d"
+            32'h01020304,
+            32'h0506000A,
+            32'h35123456,
+            32'h08000000,
+            "beep"
         };
 
         // reset
@@ -68,12 +70,12 @@ module mac_filter_tb;
         #10;
 
         $display("Sending good packet (should pass)...");
-        send_packet(good_pkt, 19);
+        send_packet(good_pkt, 6);
         // should display good_pkt by byte in transcript
         #100;
 
         $display("Sending bad packet (should be dropped)...");
-        send_packet(bad_pkt, 19);
+        send_packet(bad_pkt, 6);
         // should not display in transcript
         #100;
 
