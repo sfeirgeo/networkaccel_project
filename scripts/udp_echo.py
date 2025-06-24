@@ -7,13 +7,14 @@ print("loading overlays...")
 # load overlay
 overlay = Overlay("/home/xilinx/pynq/overlays/mac_udp/mac_udp_design.bit")
 print("loading dma...")
-dma = overlay.axi_dma_0
+dma_send = overlay.axi_dma_PS2PL
+dma_recv = overlay.axi_dma_PL2PS
 
 print("setting variables...")
-board_mac = "DE:AD:BE:EF:12:34"
-board_ip  = "192.168.5.25"
+board_mac = "DEADBEEF1234"
+board_ip  = "192.168.5.26"
 
-host_mac = "DC:4B:A1:2E:80:9C"
+host_mac = "DC4BA12E809C"
 host_ip  = "192.168.4.245"
 host_port = 2222
 board_port = 3333
@@ -23,21 +24,22 @@ print("building packet...")
 original_pkt = Ether(dst=board_mac, src=host_mac) / \
                IP(dst=board_ip, src=host_ip) / \
                UDP(dport=board_port, sport=host_port) / \
-               Raw(b"hello from host")
+               Raw("hello from host")
+
+original_pkt.show()
 
 raw_bytes = bytes(original_pkt)
 packet_len = len(raw_bytes)
-num_words = (packet_len + 3) // 4
+padded_bytes = raw_bytes + b'\x00' * ((4 - len(raw_bytes) % 4) % 4)
+num_words = len(padded_bytes) // 4
 
-
-# buffers
 print("initializing buffers...")
 in_buf = allocate(shape=(num_words,), dtype='uint32')
 out_buf = allocate(shape=(num_words,), dtype='uint32')
+
 for i in range(num_words):
-    word_bytes = raw_bytes[i*4:i*4+4]
-    in_buf[i] = int.from_bytes(word_bytes.ljust(4, b'\x00'), byteorder='little')
-    
+    in_buf[i] = int.from_bytes(padded_bytes[i*4:i*4+4], byteorder='little')
+
 in_buf.flush()
 
 # DMA to mac filter
@@ -46,9 +48,13 @@ dma.sendchannel.transfer(in_buf)
 print("receiving buffer...")
 dma.recvchannel.transfer(out_buf)
 print("waiting...")
-dma.sendchannel.wait()
-print("DMA send complete")
-dma.recvchannel.wait()
+try:
+    dma.sendchannel.wait()
+    dma.recvchannel.wait()
+except RuntimeError:
+    print("DMA error: timeout or failed transfer")
+    exit(1)
+
 print("DMA receive complete")
 out_buf.invalidate()
 

@@ -9,15 +9,6 @@ proc init_gui { IPINST } {
 
 }
 
-proc update_PARAM_VALUE.MAC_ADDR { PARAM_VALUE.MAC_ADDR } {
-	# Procedure called to update MAC_ADDR when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.MAC_ADDR { PARAM_VALUE.MAC_ADDR } {
-	# Procedure called to validate MAC_ADDR
-	return true
-}
-
 proc update_PARAM_VALUE.C_S00_AXI_BASEADDR { PARAM_VALUE.C_S00_AXI_BASEADDR } {
 	# Procedure called to update C_S00_AXI_BASEADDR when any of the dependent parameters in the arguments change
 }
@@ -36,9 +27,4 @@ proc validate_PARAM_VALUE.C_S00_AXI_HIGHADDR { PARAM_VALUE.C_S00_AXI_HIGHADDR } 
 	return true
 }
 
-
-proc update_MODELPARAM_VALUE.MAC_ADDR { MODELPARAM_VALUE.MAC_ADDR PARAM_VALUE.MAC_ADDR } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.MAC_ADDR}] ${MODELPARAM_VALUE.MAC_ADDR}
-}
 

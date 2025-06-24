@@ -257,50 +257,6 @@
 						"WVALID": { "actual": "s_axi_wvalid"}
 					}
 				},
-				"/fifo_generator_0/M_AXIS": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "s_aclk"},
-						"ARESETN": { "actual": "s_aresetn"},
-						"TDATA": { "actual": "m_axis_tdata[31:0]"},
-						"TLAST": { "actual": "m_axis_tlast"},
-						"TREADY": { "actual": "m_axis_tready"},
-						"TVALID": { "actual": "m_axis_tvalid"}
-					}
-				},
-				"/fifo_generator_0/S_AXIS": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "s_aclk"},
-						"ARESETN": { "actual": "s_aresetn"},
-						"TDATA": { "actual": "s_axis_tdata[31:0]"},
-						"TLAST": { "actual": "s_axis_tlast"},
-						"TREADY": { "actual": "s_axis_tready"},
-						"TVALID": { "actual": "s_axis_tvalid"}
-					}
-				},
-				"/fifo_generator_1/M_AXIS": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "s_aclk"},
-						"ARESETN": { "actual": "s_aresetn"},
-						"TDATA": { "actual": "m_axis_tdata[31:0]"},
-						"TLAST": { "actual": "m_axis_tlast"},
-						"TREADY": { "actual": "m_axis_tready"},
-						"TVALID": { "actual": "m_axis_tvalid"}
-					}
-				},
-				"/fifo_generator_1/S_AXIS": {
-					"interface": "xilinx.com:interface:axis:1.0",
-					"ports": {
-						"ACLK": { "actual": "s_aclk"},
-						"ARESETN": { "actual": "s_aresetn"},
-						"TDATA": { "actual": "s_axis_tdata[31:0]"},
-						"TLAST": { "actual": "s_axis_tlast"},
-						"TREADY": { "actual": "s_axis_tready"},
-						"TVALID": { "actual": "s_axis_tvalid"}
-					}
-				},
 				"/mac_filter_0/input_stream": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {

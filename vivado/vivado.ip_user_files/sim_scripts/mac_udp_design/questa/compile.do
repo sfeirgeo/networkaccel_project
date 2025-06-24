@@ -123,10 +123,6 @@ vcom -work axi_dma_v7_1_34  -93  \
 vcom -work xil_defaultlib  -93  \
 "../../../bd/mac_udp_design/ip/mac_udp_design_axi_dma_0_0/sim/mac_udp_design_axi_dma_0_0.vhd" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/86fe/hdl" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
-"../../../bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_3/sim/mac_udp_design_fifo_generator_0_3.v" \
-"../../../bd/mac_udp_design/ip/mac_udp_design_fifo_generator_0_4/sim/mac_udp_design_fifo_generator_0_4.v" \
-
 vlog -work generic_baseblocks_v2_1_2  -incr -mfcu  "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/86fe/hdl" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/mac_udp_design/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
 

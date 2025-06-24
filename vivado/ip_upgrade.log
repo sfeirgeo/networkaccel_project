@@ -1,6 +1,234 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 24 14:49:01 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_3 (xilinx.com:user:mac_filter:1.0 (Rev. 15)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 24 13:37:59 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_3 (xilinx.com:user:mac_filter:1.0 (Rev. 15)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Jun 23 13:06:18 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of mac_udp_design_mac_filter_0_2 (xilinx.com:user:mac_filter:1.0) from (Rev. 12) to (Rev. 15)
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+Parameter 'MAC_ADDR' is no longer present on the upgraded IP 'mac_udp_design_mac_filter_0_2', and cannot be set to '0xDEADBEEF1234'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:mac_filter:1.0 -user_name mac_udp_design_mac_filter_0_2
+set_property -dict "\
+  CONFIG.C_S00_AXI_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S00_AXI_HIGHADDR {0x00000000} \
+  CONFIG.Component_Name {mac_udp_design_mac_filter_0_2} \
+  CONFIG.clk.ASSOCIATED_BUSIF {input_stream:output_stream} \
+  CONFIG.clk.ASSOCIATED_PORT {} \
+  CONFIG.clk.ASSOCIATED_RESET {} \
+  CONFIG.clk.CLK_DOMAIN {mac_udp_design_processing_system7_0_3_FCLK_CLK0} \
+  CONFIG.clk.FREQ_HZ {} \
+  CONFIG.clk.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.clk.INSERT_VIP {0} \
+  CONFIG.clk.PHASE {0.0} \
+  CONFIG.input_stream.CLK_DOMAIN {mac_udp_design_processing_system7_0_3_FCLK_CLK0} \
+  CONFIG.input_stream.FREQ_HZ {} \
+  CONFIG.input_stream.HAS_TKEEP {0} \
+  CONFIG.input_stream.HAS_TLAST {1} \
+  CONFIG.input_stream.HAS_TREADY {1} \
+  CONFIG.input_stream.HAS_TSTRB {0} \
+  CONFIG.input_stream.INSERT_VIP {0} \
+  CONFIG.input_stream.LAYERED_METADATA {undef} \
+  CONFIG.input_stream.PHASE {0.0} \
+  CONFIG.input_stream.TDATA_NUM_BYTES {4} \
+  CONFIG.input_stream.TDEST_WIDTH {0} \
+  CONFIG.input_stream.TID_WIDTH {0} \
+  CONFIG.input_stream.TUSER_WIDTH {0} \
+  CONFIG.output_stream.CLK_DOMAIN {mac_udp_design_processing_system7_0_3_FCLK_CLK0} \
+  CONFIG.output_stream.FREQ_HZ {} \
+  CONFIG.output_stream.HAS_TKEEP {0} \
+  CONFIG.output_stream.HAS_TLAST {1} \
+  CONFIG.output_stream.HAS_TREADY {1} \
+  CONFIG.output_stream.HAS_TSTRB {0} \
+  CONFIG.output_stream.INSERT_VIP {0} \
+  CONFIG.output_stream.LAYERED_METADATA {undef} \
+  CONFIG.output_stream.PHASE {0.0} \
+  CONFIG.output_stream.TDATA_NUM_BYTES {4} \
+  CONFIG.output_stream.TDEST_WIDTH {0} \
+  CONFIG.output_stream.TID_WIDTH {0} \
+  CONFIG.output_stream.TUSER_WIDTH {0} \
+  CONFIG.rst_n.INSERT_VIP {0} \
+  CONFIG.rst_n.POLARITY {ACTIVE_LOW} " [get_ips mac_udp_design_mac_filter_0_2]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 17 15:43:34 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_2 (xilinx.com:user:mac_filter:1.0 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 17 15:42:01 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_2 (xilinx.com:user:mac_filter:1.0 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 17 15:08:38 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_2 (xilinx.com:user:mac_filter:1.0 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 17 14:50:33 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_2 (xilinx.com:user:mac_filter:1.0 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Jun 17 14:39:28 2025
+| Host         : geo running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mac_udp_design_mac_filter_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of mac_udp_design_mac_filter_0_2 (xilinx.com:user:mac_filter:1.0 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 | Date         : Mon Jun 16 14:24:59 2025
 | Host         : geo running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

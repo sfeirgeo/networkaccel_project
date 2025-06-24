@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Mon Jun 16 14:25:07 2025
+//Date        : Tue Jun 17 15:42:05 2025
 //Host        : geo running 64-bit major release  (build 9200)
 //Command     : generate_target mac_udp_design.bd
 //Design      : mac_udp_design
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "mac_udp_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mac_udp_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_clkrst_cnt=4,da_ps7_cnt=5,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "mac_udp_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "mac_udp_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mac_udp_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=8,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_clkrst_cnt=4,da_ps7_cnt=5,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "mac_udp_design.hwdef" *) 
 module mac_udp_design
    (DDR_addr,
     DDR_ba,
@@ -96,14 +96,6 @@ module mac_udp_design
   wire [31:0]axi_interconnect_0_M00_AXI_WDATA;
   wire axi_interconnect_0_M00_AXI_WREADY;
   wire axi_interconnect_0_M00_AXI_WVALID;
-  wire [31:0]fifo_generator_0_M_AXIS_TDATA;
-  wire fifo_generator_0_M_AXIS_TLAST;
-  wire fifo_generator_0_M_AXIS_TREADY;
-  wire fifo_generator_0_M_AXIS_TVALID;
-  wire [31:0]fifo_generator_1_M_AXIS_TDATA;
-  wire fifo_generator_1_M_AXIS_TLAST;
-  wire fifo_generator_1_M_AXIS_TREADY;
-  wire fifo_generator_1_M_AXIS_TVALID;
   wire [31:0]mac_filter_0_output_stream_TDATA;
   wire mac_filter_0_output_stream_TLAST;
   wire mac_filter_0_output_stream_TREADY;
@@ -186,11 +178,11 @@ module mac_udp_design
         .s_axi_lite_wdata(axi_interconnect_0_M00_AXI_WDATA),
         .s_axi_lite_wready(axi_interconnect_0_M00_AXI_WREADY),
         .s_axi_lite_wvalid(axi_interconnect_0_M00_AXI_WVALID),
-        .s_axis_s2mm_tdata(fifo_generator_1_M_AXIS_TDATA),
+        .s_axis_s2mm_tdata(mac_filter_0_output_stream_TDATA),
         .s_axis_s2mm_tkeep({1'b1,1'b1,1'b1,1'b1}),
-        .s_axis_s2mm_tlast(fifo_generator_1_M_AXIS_TLAST),
-        .s_axis_s2mm_tready(fifo_generator_1_M_AXIS_TREADY),
-        .s_axis_s2mm_tvalid(fifo_generator_1_M_AXIS_TVALID));
+        .s_axis_s2mm_tlast(mac_filter_0_output_stream_TLAST),
+        .s_axis_s2mm_tready(mac_filter_0_output_stream_TREADY),
+        .s_axis_s2mm_tvalid(mac_filter_0_output_stream_TVALID));
   mac_udp_design_axi_interconnect_0_1 axi_interconnect_0
        (.ACLK(processing_system7_0_FCLK_CLK0),
         .ARESETN(proc_sys_reset_0_interconnect_aresetn),
@@ -252,28 +244,6 @@ module mac_udp_design
         .S00_AXI_wready(processing_system7_0_M_AXI_GP0_WREADY),
         .S00_AXI_wstrb(processing_system7_0_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID));
-  mac_udp_design_fifo_generator_0_3 fifo_generator_0
-       (.m_axis_tdata(fifo_generator_0_M_AXIS_TDATA),
-        .m_axis_tlast(fifo_generator_0_M_AXIS_TLAST),
-        .m_axis_tready(fifo_generator_0_M_AXIS_TREADY),
-        .m_axis_tvalid(fifo_generator_0_M_AXIS_TVALID),
-        .s_aclk(processing_system7_0_FCLK_CLK0),
-        .s_aresetn(proc_sys_reset_0_peripheral_aresetn),
-        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .s_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
-  mac_udp_design_fifo_generator_0_4 fifo_generator_1
-       (.m_axis_tdata(fifo_generator_1_M_AXIS_TDATA),
-        .m_axis_tlast(fifo_generator_1_M_AXIS_TLAST),
-        .m_axis_tready(fifo_generator_1_M_AXIS_TREADY),
-        .m_axis_tvalid(fifo_generator_1_M_AXIS_TVALID),
-        .s_aclk(processing_system7_0_FCLK_CLK0),
-        .s_aresetn(proc_sys_reset_0_peripheral_aresetn),
-        .s_axis_tdata(mac_filter_0_output_stream_TDATA),
-        .s_axis_tlast(mac_filter_0_output_stream_TLAST),
-        .s_axis_tready(mac_filter_0_output_stream_TREADY),
-        .s_axis_tvalid(mac_filter_0_output_stream_TVALID));
   mac_udp_design_mac_filter_0_2 mac_filter_0
        (.clk(processing_system7_0_FCLK_CLK0),
         .m_axis_tdata(mac_filter_0_output_stream_TDATA),
@@ -281,10 +251,10 @@ module mac_udp_design
         .m_axis_tready(mac_filter_0_output_stream_TREADY),
         .m_axis_tvalid(mac_filter_0_output_stream_TVALID),
         .rst_n(proc_sys_reset_0_peripheral_aresetn),
-        .s_axis_tdata(fifo_generator_0_M_AXIS_TDATA),
-        .s_axis_tlast(fifo_generator_0_M_AXIS_TLAST),
-        .s_axis_tready(fifo_generator_0_M_AXIS_TREADY),
-        .s_axis_tvalid(fifo_generator_0_M_AXIS_TVALID));
+        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .s_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   mac_udp_design_proc_sys_reset_0_0 proc_sys_reset_0
        (.aux_reset_in(xlconstant_0_dout),
         .dcm_locked(1'b1),

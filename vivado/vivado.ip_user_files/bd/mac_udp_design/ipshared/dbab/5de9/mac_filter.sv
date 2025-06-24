@@ -25,7 +25,6 @@ module mac_filter #(
     state_t state, next_state;
     logic [47:0] mac_buffer;
     int byte_cnt = 0;
-    logic valid_reg;
 
     assign s_axis_tready = 1'b1;
 
@@ -72,16 +71,16 @@ module mac_filter #(
     // outputs
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            valid_reg <= 0;
+            m_axis_tvalid <= 0;
             m_axis_tdata <= 0;
             m_axis_tlast <= 0;
         end else begin
-            valid_reg <= (next_state == FWD && s_axis_tvalid);
-            m_axis_tdata <= (((next_state == FWD) || (next_state == READ_MAC)) && m_axis_tready ? s_axis_tdata : 0);
+            m_axis_tvalid <= s_axis_tvalid; //((((next_state == FWD) && (mac_buffer == MAC_ADDR)) 
+                           // || ((byte_cnt == 1) && (m_axis_tdata == MAC_ADDR[47:16])))
+                           // &&   s_axis_tvalid);
+            m_axis_tdata <= s_axis_tdata;// (((next_state == FWD) || (next_state == READ_MAC)) && m_axis_tready ? s_axis_tdata : 0);
             m_axis_tlast <= (state == IDLE) ? 0 : s_axis_tlast;
         end
     end
-
-    assign m_axis_tvalid = valid_reg;
 
 endmodule
